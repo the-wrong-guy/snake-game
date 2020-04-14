@@ -8,6 +8,7 @@ var snakeW = 10;
 var snakeH = 10;
 
 var score = 0;
+var highestScore = 0;
 
 var direction = "right";
 
@@ -61,7 +62,7 @@ function drawFood(x, y) {
 
 //collision detector
 function collisonDectector(x, y, array) {
-  for (let i = 0; i < array.length - 1; i++) {
+  for (let i = 2; i < array.length - 1; i++) {
     if (x == array[i].x && y == array[i].y) {
       return true;
     }
@@ -83,9 +84,6 @@ function draw() {
     drawSnake(x, y);
   }
 
-
-//    collisonDectector(snakeX, snakeY, snake) == true
-    
   //snake head
   var snakeX = snake[0].x;
   var snakeY = snake[0].y;
@@ -94,7 +92,8 @@ function draw() {
     snakeX < 0 ||
     snakeY < 0 ||
     snakeX >= canvasW / snakeW ||
-    snakeY >= canvasH / snakeH 
+    snakeY >= canvasH / snakeH ||
+    collisonDectector(snakeX, snakeY, snake)
   ) {
     location.reload();
   }
@@ -137,6 +136,39 @@ function draw() {
   snake.unshift(newHead);
   drawScore(score);
 }
+
+
+//Function for mobile devices
+var RIGHT = document.getElementById("right");
+var LEFT =  document.getElementById("left");
+var UP = document.getElementById("up");
+var DOWN = document.getElementById("down");
+
+function myFunction() {
+    RIGHT.addEventListener('click',()=>{
+        if(direction !== "left"){
+        direction = "right";}
+    })
+    LEFT.addEventListener('click',()=>{
+        if(direction !== "right"){
+        direction = "left";}
+    })
+    UP.addEventListener('click',()=>{
+        if(direction !== "down"){
+        direction = "up";}
+    })
+    DOWN.addEventListener('click',()=>{
+        if(direction !== "up"){
+        direction = "down";}
+    })
+}
+
+var x = window.matchMedia("(max-width: 700px)")
+myFunction() // Call listener function at run time
+x.addListener(myFunction) // Attach listener function on state changes
+
+
+
 
 setInterval(draw, 60);
 

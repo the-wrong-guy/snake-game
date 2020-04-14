@@ -38,11 +38,47 @@ h2 {
 }
 
 @media only screen and (max-width: 600px) {
+  body {
+    overflow: hidden;
+  }
   #canvas {
-    max-width: 400px;
+    max-width: 330px;
   }
 
   .nav-buttons {
-    display: grid;
+    position: relative;
+    top: 2em;
+    width: 180px;
+    height: 180px;
+    display: block;
+    margin: 0 auto;
+    background-color: aqua;
+    border-radius: 100%;
+  }
+
+  .left-right {
+    display: flex;
+    justify-content: center;
+  }
+
+  .left-right button {
+    margin: 3em;
+    background: linear-gradient(to right, lightblue, lime);
+  }
+
+  #up,
+  #down {
+    margin: 0 auto;
+    display: block;
+    background: linear-gradient(to right, deeppink, yellow, red);
+  }
+
+  button {
+    position: relative;
+    top: 10px;
+    box-sizing: border-box;
+    background: transparent;
+    border: none;
+    outline: none;
   }
 }
