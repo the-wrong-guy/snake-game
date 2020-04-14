@@ -1,85 +1,87 @@
 @import url("https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap");
 
 * {
-  padding: 0;
-  margin: 0;
+    padding: 0;
+    margin: 0;
 }
 
 body {
-  max-height: 100vh;
-  max-height: 100%;
-    overflow: hidden;
+    max-height: 100vh;
+    max-height: 100%;
+/*    overflow: hidden;*/
+    background: linear-gradient(135deg, rgb(187, 227, 29) 0%, rgb(187, 227, 29) 5%,rgb(96, 176, 66) 5%, rgb(96, 176, 66) 45%,rgb(5, 125, 104) 45%, rgb(5, 125, 104) 50%,rgb(233, 253, 10) 50%, rgb(233, 253, 10) 55%,rgb(51, 151, 85) 55%, rgb(51, 151, 85) 77%,rgb(142, 202, 48) 77%, rgb(142, 202, 48) 100%);
 }
 
 h2 {
-  font-family: "Press Start 2P", cursive;
-  color: orangered;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  height: 2em;
-  box-sizing: border-box;
-  padding: 10px;
+    font-family: "Press Start 2P", cursive;
+    color: orange;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 2em;
+    box-sizing: border-box;
+    padding: 10px;
 }
 
 .container {
-  margin-top: 2em;
-  width: 100%;
-  height: 100%;
-  display: flex;
-  justify-content: center;
+    margin-top: 2em;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
 }
 
 #canvas {
-  background: #000;
+    background: #000;
 }
 
 .nav-buttons {
-  display: none;
+    display: none;
 }
 
 @media only screen and (max-width: 600px) {
-  body {
-    overflow: hidden;
-  }
-  #canvas {
-    max-width: 330px;
-  }
+    body {
+        overflow: hidden;
+    }
 
-  .nav-buttons {
-    position: relative;
-    top: 2em;
-    width: 180px;
-    height: 180px;
-    display: block;
-    margin: 0 auto;
-    background-color: aqua;
-    border-radius: 100%;
-  }
+    #canvas {
+        max-width: 330px;
+    }
 
-  .left-right {
-    display: flex;
-    justify-content: center;
-  }
+    .nav-buttons {
+        position: relative;
+        top: 2em;
+        width: 180px;
+        height: 180px;
+        display: block;
+        margin: 0 auto;
+        background-color: aqua;
+        border-radius: 100%;
+    }
 
-  .left-right button {
-    margin: 3em;
-    background: linear-gradient(to right, lightblue, lime);
-  }
+    .left-right {
+        display: flex;
+        justify-content: center;
+    }
 
-  #up,
-  #down {
-    margin: 0 auto;
-    display: block;
-    background: linear-gradient(to right, deeppink, yellow, red);
-  }
+    .left-right button {
+        margin: 3em;
+        background: linear-gradient(to right, lightblue, lime);
+    }
 
-  button {
-    position: relative;
-    top: 10px;
-    box-sizing: border-box;
-    background: transparent;
-    border: none;
-    outline: none;
-  }
+    #up,
+    #down {
+        margin: 0 auto;
+        display: block;
+        background: linear-gradient(to right, deeppink, yellow, red);
+    }
+
+    button {
+        position: relative;
+        top: 10px;
+        box-sizing: border-box;
+        background: transparent;
+        border: none;
+        outline: none;
+    }
 }

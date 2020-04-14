@@ -72,6 +72,7 @@ function collisonDectector(x, y, array) {
 
 function drawScore(x) {
   ctx.fillStyle = "yellow";
+    ctx.font = "12px Verdana";
   ctx.fillText("Score : " + x, 5, canvasH - 5);
 }
 
