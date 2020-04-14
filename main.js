@@ -8,7 +8,8 @@ var snakeW = 10;
 var snakeH = 10;
 
 var score = 0;
-var highestScore = 0;
+//reset banner
+var resetBanner = document.querySelector(".reset")
 
 var direction = "right";
 
@@ -70,16 +71,10 @@ function collisonDectector(x, y, array) {
   return false;
 }
 
-//to reset the game
-function reset(){
-   setTimeout(location.reload(),1000);
-};
-
-
 function drawScore(x) {
   ctx.fillStyle = "yellow";
-    ctx.font = "12px Verdana";
-  ctx.fillText("Score : " + x, 5, canvasH - 5);
+    ctx.font = "16px Verdana";
+  ctx.fillText("Score : " + x, 10, canvasH - 5);
 }
 
 function draw() {
@@ -102,8 +97,8 @@ function draw() {
     snakeY >= canvasH / snakeH ||
     collisonDectector(snakeX, snakeY, snake)
   ) {
-      reset();
-//   location.reload(true);
+    resetBanner.style.visibility = "visible";
+
   }
   switch (direction) {
     case "left":
@@ -147,10 +142,15 @@ function draw() {
 
 
 //Function for mobile devices
+var restart = document.getElementById("restart");
 var RIGHT = document.getElementById("right");
 var LEFT =  document.getElementById("left");
 var UP = document.getElementById("up");
 var DOWN = document.getElementById("down");
+
+restart.addEventListener('click',()=>{
+  window.location.reload();
+})
 
 function myFunction() {
     RIGHT.addEventListener('click',()=>{
@@ -178,6 +178,9 @@ x.addListener(myFunction) // Attach listener function on state changes
 
 
 
-setInterval(draw, 80);
+  setInterval(draw, 60);
+
+
+
 
 //draw(); //output will be {0,0} ,{0,1},{0,2},{0,3}

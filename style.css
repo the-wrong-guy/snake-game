@@ -8,7 +8,6 @@
 body {
     max-height: 100vh;
     max-height: 100%;
-/*    overflow: hidden;*/
     background: linear-gradient(135deg, rgb(187, 227, 29) 0%, rgb(187, 227, 29) 5%,rgb(96, 176, 66) 5%, rgb(96, 176, 66) 45%,rgb(5, 125, 104) 45%, rgb(5, 125, 104) 50%,rgb(233, 253, 10) 50%, rgb(233, 253, 10) 55%,rgb(51, 151, 85) 55%, rgb(51, 151, 85) 77%,rgb(142, 202, 48) 77%, rgb(142, 202, 48) 100%);
 }
 
@@ -23,6 +22,10 @@ h2 {
     padding: 10px;
 }
 
+.reset{
+    display: none;
+}
+
 .container {
     margin-top: 2em;
     width: 100%;
@@ -33,6 +36,7 @@ h2 {
 
 #canvas {
     background: #000;
+    border-radius: 7px
 }
 
 .nav-buttons {
@@ -50,13 +54,15 @@ h2 {
 
     .nav-buttons {
         position: relative;
-        top: 2em;
+        top: 1.3em;
         width: 180px;
         height: 180px;
         display: block;
         margin: 0 auto;
         background-color: aqua;
         border-radius: 100%;
+        border-color:yellow;
+        border-style:solid;
     }
 
     .left-right {
@@ -75,8 +81,42 @@ h2 {
         display: block;
         background: linear-gradient(to right, deeppink, yellow, red);
     }
+    
+    .reset{
+        position: absolute;
+        width: 100%;
+        height:200px;
+        display: grid;
+        align-content: center;
+        justify-content: center;
+        background: white;
+        top: 20%;
+        z-index: 1000000;
+        visibility: hidden;
+    }
 
-    button {
+    .reset h3{
+        color: red;
+        font-family: "Press Start 2P", cursive;
+    }
+
+    
+    .reset button{
+        margin: 0 auto;
+        border: 1px solid;
+        width: 60px;
+        height: 20px;
+        font-weight: bolder;
+        font-size: 9px;;
+        padding: 2px;
+       box-sizing: border-box;
+        border-radius: 10px;
+        border: 2px solid blueviolet;
+        color : #fff;
+        background: #000;
+    }
+
+    button{
         position: relative;
         top: 10px;
         box-sizing: border-box;
