@@ -1,3 +1,5 @@
+document.addEventListener('DOMContentLoaded', (event) => {
+
 var canvas = document.getElementById("canvas");
 var ctx = canvas.getContext("2d");
 
@@ -98,7 +100,7 @@ function draw() {
     collisonDectector(snakeX, snakeY, snake)
   ) {
     resetBanner.style.visibility = "visible";
-
+    ctx.clearRect(0, 0, canvasW, canvasH);
   }
   switch (direction) {
     case "left":
@@ -175,10 +177,27 @@ var x = window.matchMedia("(max-width: 600px)")
 myFunction() // Call listener function at run time
 x.addListener(myFunction) // Attach listener function on state changes
 
+setInterval(draw, 80);
+})
+
+//for preloader
+document.body.setAttribute("class", "noscroll");
+
+    document.getElementById("overlay").style.display = "block";
+    document.getElementById("spinner").style.display = "block";
+
+
+    window.onload = function() {
+      document.getElementById("spinner").style.display = "none";
+      document.getElementById("overlay").style.display = "none";
+
+      document.body.className = document.body.className.replace(/\bnoscroll\b/,'');
+    }
 
 
 
-  setInterval(draw, 90);
+
+  
 
 
 
