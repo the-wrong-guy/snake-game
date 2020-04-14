@@ -178,7 +178,7 @@ x.addListener(myFunction) // Attach listener function on state changes
 
 
 
-  setInterval(draw, 60);
+  setInterval(draw, 90);
 
 
 
