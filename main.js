@@ -97,7 +97,7 @@ function draw() {
     collisonDectector(snakeX, snakeY, snake)
   ) {
       // drawSnake(20,20);
-   location.reload();
+   location.reload(true);
   }
   switch (direction) {
     case "left":
