@@ -70,6 +70,12 @@ function collisonDectector(x, y, array) {
   return false;
 }
 
+//to reset the game
+function reset(){
+   setTimeout(location.reload(),1000);
+};
+
+
 function drawScore(x) {
   ctx.fillStyle = "yellow";
     ctx.font = "12px Verdana";
@@ -96,8 +102,8 @@ function draw() {
     snakeY >= canvasH / snakeH ||
     collisonDectector(snakeX, snakeY, snake)
   ) {
-      // drawSnake(20,20);
-   location.reload(true);
+      reset();
+//   location.reload(true);
   }
   switch (direction) {
     case "left":
