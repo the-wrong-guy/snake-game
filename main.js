@@ -178,6 +178,6 @@ x.addListener(myFunction) // Attach listener function on state changes
 
 
 
-setInterval(draw, 60);
+setInterval(draw, 80);
 
 //draw(); //output will be {0,0} ,{0,1},{0,2},{0,3}
