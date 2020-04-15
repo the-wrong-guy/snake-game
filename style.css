@@ -95,6 +95,13 @@ h2 {
 .nav-buttons {
     display: none;
 }
+@media only screen and (max-width: 350px) {
+    #canvas {
+        max-width: 325px;
+        max-height: 327px;
+    }
+
+}
 
 @media only screen and (max-width: 600px) {
     body {
@@ -103,7 +110,6 @@ h2 {
 
     #canvas {
         max-width: 330px;
-        max-height: 340px;
     }
 
     .nav-buttons {
