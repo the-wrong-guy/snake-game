@@ -138,7 +138,8 @@ function draw() {
   ) {
     resetBanner.style.visibility = "visible";
     ctx.clearRect(0, 0, ctx.canvas.width, ctx.canvas.height);
-ctx.beginPath();
+    clearInterval(gameLoop);
+    return;
   }
   switch (direction) {
     case "left":
@@ -193,7 +194,11 @@ function reset() {
       x: i,
       y: 0,
     });
+    
   }
+
+
+
   food = {
     x: Math.round(Math.random() * (canvasW / snakeW - 1)),
     y: Math.round(Math.random() * (canvasH / snakeH - 1))
@@ -204,7 +209,7 @@ function reset() {
 
   score = 0;
   direction = "right";
-  clearInterval(gameLoop);
+  // clearInterval(gameLoop);
   gameLoop = setInterval(draw, 80);
 }
 })

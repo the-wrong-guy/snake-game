@@ -122,18 +122,30 @@ h2 {
     .left-right {
         display: flex;
         justify-content: center;
+        
     }
 
     .left-right button {
+        top: -5px;
         margin: 3em;
-        background: linear-gradient(to right, lightblue, lime);
+        color: lime;
+        /* background: linear-gradient(to right, lightblue, lime); */
+        width: 50px;
+        height: 40px;;
+    }
+
+    #down{
+        top: -18px;
     }
 
     #up,
     #down {
         margin: 0 auto;
+        width: 70px;
+        height: 33px;
         display: block;
-        background: linear-gradient(to right, deeppink, yellow, red);
+        color: crimson;
+        /* background: linear-gradient(to right, deeppink, yellow, red); */
     }
     
     .reset{
