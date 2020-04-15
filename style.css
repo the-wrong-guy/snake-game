@@ -103,7 +103,7 @@ h2 {
 
     #canvas {
         max-width: 330px;
-        min-height: 330px;
+        max-height: 330px;
     }
 
     .nav-buttons {
