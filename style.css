@@ -76,7 +76,7 @@ h2 {
 }
 
 .reset{
-    display: none;
+    display: flex;
 }
 
 .container {

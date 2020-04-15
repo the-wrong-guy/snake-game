@@ -1,4 +1,41 @@
 document.addEventListener('DOMContentLoaded', (event) => {
+  
+//Function for mobile devices
+var restart = document.getElementById("restart");
+var RIGHT = document.getElementById("right");
+var LEFT =  document.getElementById("left");
+var UP = document.getElementById("up");
+var DOWN = document.getElementById("down");
+
+
+
+//restart function
+restart.addEventListener('click', reset);
+
+
+function myFunction() {
+    RIGHT.addEventListener('click',()=>{
+        if(direction !== "left"){
+        direction = "right";}
+    })
+    LEFT.addEventListener('click',()=>{
+        if(direction !== "right"){
+        direction = "left";}
+    })
+    UP.addEventListener('click',()=>{
+        if(direction !== "down"){
+        direction = "up";}
+    })
+    DOWN.addEventListener('click',()=>{
+        if(direction !== "up"){
+        direction = "down";}
+    })
+}
+
+var x = window.matchMedia("(max-width: 600px)")
+myFunction() // Call listener function at run time
+x.addListener(myFunction) // Attach listener function on state changes
+
 
 var canvas = document.getElementById("canvas");
 var ctx = canvas.getContext("2d");
@@ -100,7 +137,8 @@ function draw() {
     collisonDectector(snakeX, snakeY, snake)
   ) {
     resetBanner.style.visibility = "visible";
-    ctx.clearRect(0, 0, canvasW, canvasH);
+    ctx.clearRect(0, 0, ctx.canvas.width, ctx.canvas.height);
+ctx.beginPath();
   }
   switch (direction) {
     case "left":
@@ -143,43 +181,33 @@ function draw() {
 }
 
 
-//Function for mobile devices
-var restart = document.getElementById("restart");
-var RIGHT = document.getElementById("right");
-var LEFT =  document.getElementById("left");
-var UP = document.getElementById("up");
-var DOWN = document.getElementById("down");
 
-restart.addEventListener('click',()=>{
-  window.location.reload();
-})
+var gameLoop = setInterval(draw, 80);
 
-function myFunction() {
-    RIGHT.addEventListener('click',()=>{
-        if(direction !== "left"){
-        direction = "right";}
-    })
-    LEFT.addEventListener('click',()=>{
-        if(direction !== "right"){
-        direction = "left";}
-    })
-    UP.addEventListener('click',()=>{
-        if(direction !== "down"){
-        direction = "up";}
-    })
-    DOWN.addEventListener('click',()=>{
-        if(direction !== "up"){
-        direction = "down";}
-    })
+function reset() {
+  resetBanner.style.visibility = "hidden";
+  len = 4;
+  snake = [];
+  for (let i = len - 1; i >= 0; i--) {
+    snake.push({
+      x: i,
+      y: 0,
+    });
+  }
+  food = {
+    x: Math.round(Math.random() * (canvasW / snakeW - 1)),
+    y: Math.round(Math.random() * (canvasH / snakeH - 1))
+  };
+  drawFood(food.x, food.y)
+
+
+
+  score = 0;
+  direction = "right";
+  clearInterval(gameLoop);
+  gameLoop = setInterval(draw, 80);
 }
-
-var x = window.matchMedia("(max-width: 600px)")
-myFunction() // Call listener function at run time
-x.addListener(myFunction) // Attach listener function on state changes
-
-setInterval(draw, 80);
 })
-
 //for preloader
 document.body.setAttribute("class", "noscroll");
 
